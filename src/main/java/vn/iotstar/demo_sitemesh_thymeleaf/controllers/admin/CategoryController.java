@@ -31,6 +31,12 @@ public class CategoryController {
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
+    
+    @GetMapping
+    public String listCategories(ModelMap model) {
+        return search(model, null, Optional.of(1), Optional.of(3)); // Adjust page size as needed
+    }
+    
     @GetMapping("/add")
     public String add(Model model) {
         CategoryModel category = new CategoryModel();

@@ -9,4 +9,9 @@ public class HomeController {
     public String index(){
         return "web/home";
     }
+    
+    @GetMapping("/web/home")
+    public String webHome() {
+        return "web/home"; // This handles the /web/home URL
+    }
 }
